@@ -40,11 +40,20 @@ export default class GameScene extends Scene {
       frameRate: 10
     });
 
-    this.cameras.main.setBackgroundColor("#000000");
+    this.cameras.main.setBackgroundColor("#00BFFF");
+
+    for (let i = 0; i < 10; i++) {
+      this.add.sprite(i * 100 + 50, 535, "tiles", 14 * 5 + 2);
+    }
+
     this.player = this.add.sprite(100, 500, "character");
     this.player.velocityY = 0;
     this.player.jumpsCount = 0;
     this.player.anims.play("char_idle");
+
+    for (let i = 0; i < 10; i++) {
+      this.add.sprite(i * 128, 650, "tiles", 0);
+    }
   }
 
   update(time, delta) {
