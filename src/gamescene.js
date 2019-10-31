@@ -39,13 +39,21 @@ export default class GameScene extends Scene {
       frames: [{ key: "character", frame: 1 }],
       frameRate: 10
     });
-
+    
     this.cameras.main.setBackgroundColor("#00BFFF");
-
+    
     for (let i = 0; i < 10; i++) {
       this.add.sprite(i * 100 + 50, 535, "tiles", 14 * 5 + 2);
     }
-
+    
+    this.add.sprite(600 + 54, 525, "tiles", 80); //button
+    // this.add.sprite(600 + 54, 525, "tiles",81); //pushed button
+    this.add.sprite(780 + 54, 425, "tiles",76); //closed door
+    this.add.sprite(780 + 54, 525, "tiles",90); //closed door 2
+    // this.add.sprite(780 + 54, 425, "tiles",75); //open door
+    // this.add.sprite(780 + 54, 525, "tiles",89); //open door 2
+    
+    
     this.player = this.add.sprite(100, 500, "character");
     this.player.velocityY = 0;
     this.player.jumpsCount = 0;
